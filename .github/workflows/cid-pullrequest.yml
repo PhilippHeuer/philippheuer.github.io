@@ -1,4 +1,4 @@
-# cid-workflow-version: 0.0.5
+# cid-workflow-version: 0.0.6
 
 # name
 name: cid-pullrequest
@@ -60,12 +60,12 @@ env:
     cdn01.quay.io:443
     cdn02.quay.io:443
     cdn03.quay.io:443
+    files.pythonhosted.org:443
     github.com:443
     objects.githubusercontent.com:443
+    pypi.org:443
     quay.io:443
     raw.githubusercontent.com:443
-    pypi.org:443
-    files.pythonhosted.org:443
   EGRESS_POLICY_ALLOWED_ENDPOINTS_BUILD: ""
   EGRESS_POLICY_ALLOWED_ENDPOINTS_TEST: ""
   EGRESS_POLICY_ALLOWED_ENDPOINTS_SCAN: >-
@@ -95,7 +95,7 @@ jobs:
         with:
           version: ${{ env.CID_VERSION }}
       - name: checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
         with:
           fetch-depth: 0
       - name: info
@@ -127,7 +127,7 @@ jobs:
         with:
           version: ${{ env.CID_VERSION }}
       - name: checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
         with:
           fetch-depth: 0
       - name: build
@@ -172,7 +172,7 @@ jobs:
         with:
           version: ${{ env.CID_VERSION }}
       - name: checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
         with:
           fetch-depth: 0
       - name: test
@@ -208,7 +208,7 @@ jobs:
         with:
           version: ${{ env.CID_VERSION }}
       - name: checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
         with:
           fetch-depth: 0
       - name: download artifacts > build
